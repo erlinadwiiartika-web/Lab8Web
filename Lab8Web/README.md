@@ -33,48 +33,50 @@ Aplikasi CRUD sederhana **Data Barang** menggunakan PHP (MySQLi) dan MySQL/Maria
 ### 1. Menjalankan Apache dan MySQL
 Buka XAMPP Control Panel lalu klik **Start** pada Apache dan MySQL hingga berwarna hijau.
 
-![XAMPP](screenshots/01_xampp_control.png)
+<img width="663" height="430" alt="Screenshot 2026-11-17 201432" src="https://github.com/user-attachments/assets/a8a64579-36e2-46b3-b3ec-fb53d6ff8f9d" />
+
 
 ### 2. Membuat Database, Tabel, dan Data Awal
 Di phpMyAdmin (tab SQL) jalankan `CREATE DATABASE latihan1;`, lalu `CREATE TABLE data_barang (...)`, kemudian `INSERT INTO ...` (lihat `database.sql`).
 
-![Database](screenshots/02a_buat_database.png)
-![Tabel](screenshots/02b_buat_tabel.png)
-![Insert](screenshots/02c_insert_data.png)
+<img width="875" height="433" alt="image" src="https://github.com/user-attachments/assets/c593799d-92b5-4c38-9dcf-67996d255065" />
+
 
 ### 3. Membuat Folder Project
 Buat folder `lab8_php_database` di `htdocs`, sub-folder `gambar`, serta file `koneksi.php`, `index.php`, `tambah.php`, `ubah.php`, `hapus.php`, `style.css`.
 
-![Folder](screenshots/02d_struktur_folder.png)
 
 ### 4. koneksi.php
 `mysqli_connect()` menghubungkan PHP ke database `latihan1` (host `localhost`, user `root`, tanpa password).
 
-![Koneksi](screenshots/03_koneksi_berhasil.png)
+<img width="940" height="263" alt="image" src="https://github.com/user-attachments/assets/c9d32bd0-131b-40fd-93c7-588a1cafebdb" />
+
 
 ### 5. index.php (Read)
 Menjalankan `SELECT * FROM data_barang` dan menampilkan hasilnya dalam tabel menggunakan `while` + `mysqli_fetch_array()`.
 
-![Index](screenshots/04_index_awal.png)
+<img width="940" height="525" alt="image" src="https://github.com/user-attachments/assets/1921c048-fc9e-4780-884f-cc263ed0d66b" />
+
 
 ### 6. tambah.php (Create)
 Form `method="post"` dengan `enctype="multipart/form-data"`. Data disimpan dengan `INSERT` (prepared statement) dan gambar dipindahkan ke folder `gambar/` memakai `move_uploaded_file()`.
 
-![Form tambah](screenshots/05_form_tambah_kosong.png)
-![Form tambah terisi](screenshots/06_form_tambah_isi.png)
-![Setelah tambah](screenshots/07_index_setelah_tambah.png)
+<img width="940" height="568" alt="image" src="https://github.com/user-attachments/assets/c0b72a13-8cec-4c06-a8f0-3fef90a77813" />
+<img width="940" height="500" alt="image" src="https://github.com/user-attachments/assets/15d6c008-6152-4059-af69-b470a0d0af6e" />
+
 
 ### 7. ubah.php (Update)
 Mengambil data berdasarkan `id` (`$_GET`), menampilkannya di form, lalu menyimpan perubahan dengan `UPDATE`.
 
-![Form ubah](screenshots/08_form_ubah.png)
-![Setelah ubah](screenshots/09_index_setelah_ubah.png)
+<img width="940" height="410" alt="image" src="https://github.com/user-attachments/assets/1e9811b1-cfb2-495b-896b-1eb3c7f74537" />
+<img width="940" height="515" alt="image" src="https://github.com/user-attachments/assets/940a38e1-fd91-4e13-801c-f97a499d6a31" />
+
 
 ### 8. hapus.php (Delete)
 Menghapus data berdasarkan `id` dengan `DELETE`, didahului konfirmasi JavaScript.
 
-![Konfirmasi hapus](screenshots/10_konfirmasi_hapus.png)
-![Setelah hapus](screenshots/11_index_setelah_hapus.png)
+<img width="940" height="428" alt="image" src="https://github.com/user-attachments/assets/4ecdf45c-10ee-45d9-ad18-78589bca5565" />
+
 
 ## Perbaikan dari Kode Modul
 - Urutan header Harga Beli / Harga Jual disamakan dengan isi tabel.
